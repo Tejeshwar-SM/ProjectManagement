@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      nav {
+        background-color: #334;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin-right: 1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+
+      .container {
+        display: flex;
+        flex: 1;
+        overflow: hidden; /* Prevents scrolling */
+      }
+
+      .left-section,
+      .right-section {
+        width: 20%;
+        background-color: #c6c6c6; /* Light greyish background for both left and right sections */
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .main-section {
+        width: 60%;
+        padding: 20px;
+        background-image: url('/photocrc.avif');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        overflow-y: auto;
+      }
+
+      .main-section h1 {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .main-section p {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .left-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .left-section ul li {
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .left-section ul li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+      }
+
+      .left-section ul li:hover,
+      .left-section ul li a:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .right-section textarea {
+        width: 100%;
+        height: 80%;
+        resize: none;
+      }
+
+      .right-section button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .right-section button:hover {
+        background-color: #45a049;
+      }
+
+      .footer {
+        background-color: #334;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="listofprojects.html">Projects</a></li>
+        <li><a href="#tasks">Notifications</a></li>
+        <li><a href="#reports">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="left-section">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1lXZuO1jUawBBq-8PyVt6vQBNkGVujQWk/view?usp=sharing" target="_blank">Drawing</a></li>
+          <li><a href="https://drive.google.com/file/d/1b5tlf2VyGhGH2Fb8K7yxRBrFVkJ87tBf/view?usp=sharing" target="_blank">Tender</a></li>
+          <li><a href="https://example.com/bill" target="_blank">Bill</a></li>
+          <li><a href="https://example.com/progress" target="_blank">Progress</a></li>
+          <li><a href="https://example.com/extra-stuff" target="_blank">Extra Stuff</a></li>
+        </ul>
+      </div>
+      <div class="main-section">
+        <h1>PG Classroom CRC Project</h1>
+        <p>
+          <strong>Project Overview:</strong> The PG Classroom CRC project aims to construct a state-of-the-art classroom for post graduate students.
+        </p>
+        <p>
+          <strong>Location:</strong> Visvesvaraya National Institute of Technology, Nagpur
+        </p>
+        <p>
+          <strong>Project Duration:</strong> 15 months (Expected completion: May 2025)
+        </p>
+        <p>
+          <strong>Key Features:</strong>
+          <ul>
+            <li>Vibrant Campus</li>
+            <li>4 Storied Building</li>
+            <li>Air-Conditioned Smart Classrooms</li>
+          </ul>
+        </p>
+        <p>
+          <strong>Current Status:</strong> The project is currently in the initial construction phase. Foundation work has been completed, and the structural frame is being erected.
+        </p>
+      </div>
+      <div class="right-section">
+        <h2>Add Comments</h2>
+        <textarea placeholder="Write your comment here..."></textarea>
+        <button>Add Comment</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Project Management. All rights reserved.</p>
+    </div>
+  </body>
+</html>

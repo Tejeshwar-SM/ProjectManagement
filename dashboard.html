@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management Dashboard</title>
+    <style>
+      body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensures the body takes up the full height of the viewport */
+  /* background-image: url('/imageFinal.webp'); Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+  overflow: hidden; /* Removes the scrollbar */
+  color: #333;
+}
+
+
+      /* Navigation Bar Styles */
+      nav {
+        background-color: #334;
+        color: white;
+        padding: 1rem;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 1rem;
+      }
+
+      nav ul li a {
+        color: rgb(253, 251, 251);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #45a049;
+      }
+
+      /* Main Content Styles */
+      main {
+  flex-grow: 1; /* Ensures the main content grows to fill available space */
+  padding: 2rem;
+  background-color: rgb(227, 218, 218);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centers the content horizontally */
+  border-radius: 8px;
+  width: 80%; /* Controls the width of the main content */
+  max-width: 100vw; /* Sets a maximum width for large screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  height: calc(100vh - 120px); /* Adjust height to fit between navbar and footer */
+}
+
+
+      h1 {
+        color: #333;
+      }
+
+      p {
+        color: #000000;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #334;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: auto;
+      }
+
+  /* Quick Stats */
+  .quick-stats {
+    margin-bottom: 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background-color: #45a049;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* Recent Activity */
+  .recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+    color: #333;
+  }
+
+  .recent-activity li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Project Overview Cards */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+    .project-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Task Summary */
+    .task-summary ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .task-summary li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+     /* Footer styles */
+     .footer {
+      background-color: #334;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+
+  </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="listofprojects.html">Projects</a></li>
+        <li><a href="#tasks">Notifications</a></li>
+        <li><a href="#reports">About</a></li>
+      </ul>
+    </nav>
+
+    
+      <main>
+        <h1>Welcome to the Project Management Dashboard</h1>
+        <p>Stay updated with your latest projects, tasks, and reports at a glance.</p>
+      
+        <!-- Quick Stats Section -->
+        <section class="quick-stats">
+          <h2>Quick Stats</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Ongoing Projects</h3>
+              <p>5</p>
+            </div>
+            <div class="stat-card">
+              <h3>Tasks Due Today</h3>
+              <p>3</p>
+            </div>
+            <div class="stat-card">
+              <h3>Completed Projects</h3>
+              <p>12</p>
+            </div>
+            <div class="stat-card">
+              <h3>Upcoming Deadlines</h3>
+              <p>4</p>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Recent Activity Section -->
+        <section class="recent-activity">
+          <h2>Recent Activity</h2>
+          <ul>
+            <li>Project <strong>Website Redesign</strong> updated by <strong>John Doe</strong>.</li>
+            <li>Task <strong>Create Marketing Plan</strong> completed by <strong>Jane Smith</strong>.</li>
+            <li>Deadline for <strong>Client Proposal</strong> approaching in 2 days.</li>
+          </ul>
+        </section>
+      
+      </main>
+    
+
+    <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; 2024 Project Management. All rights reserved.</p>
+  </div>
+    <script>
+      // You can add any necessary JavaScript here
+    </script>
+  </body>
+</html>

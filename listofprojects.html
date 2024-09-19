@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        font-family: Arial, sans-serif;
+        height: 100%;
+        overflow: hidden; /* Prevents scrolling */
+      }
+
+      body {
+        background-image: url('/imageFinal.webp'); /* Add your image path here */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav {
+        background-color: #334;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin-right: 1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+
+      .main-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+
+      .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        flex: 1 1 calc(33.333% - 2rem); /* 3 cards per row */
+        max-width: 300px; /* Ensures all cards have consistent size */
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-info {
+        margin-bottom: 0.5rem;
+      }
+
+      .project-completion {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-weight: bold;
+        color: #4caf50;
+      }
+
+      .footer {
+        background-color: #334;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav ul li {
+          margin-bottom: 0.5rem;
+        }
+
+        .project-card {
+          flex: 1 1 100%; /* Stacks cards on smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="listofprojects.html">Projects</a></li>
+        <li><a href="#tasks">Notifications</a></li>
+        <li><a href="#reports">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <div class="container">
+        <h1>Projects</h1>
+        <div class="project-grid" id="projectGrid">
+          <!-- Project cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Project Management. All rights reserved.</p>
+    </div>
+
+    <script>
+      // Sample project data
+      const projects = [
+        {
+          id: 1,
+          name: "PG Classroom Complex",
+          supervisor: "Dr. Abhay Tawalare",
+          company: "Mana Constructions",
+          completion: 10,
+        },
+        {
+          id: 2,
+          name: "VNIT Swimming Pool",
+          supervisor: "ABC",
+          company: "Swimming Pools Ltd",
+          completion: 100,
+        },
+        {
+          id: 3,
+          name: "Boys Hostel",
+          supervisor: "ABC",
+          company: "lorem",
+          completion: 80,
+        },
+        {
+          id: 4,
+          name: "Girls Hostel",
+          supervisor: "ABC",
+          company: "ABC Builders",
+          completion: 55,
+        },
+        {
+          id: 5,
+          name: "Boys Mess",
+          supervisor: "XYZ",
+          company: "VNIT Inc.",
+          completion: 30,
+        },
+        {
+          id: 6,
+          name: "Civil Lab 1",
+          supervisor: "PQRST",
+          company: "PQR Inc.",
+          completion: 70,
+        },
+      ];
+
+      const projectGrid = document.getElementById("projectGrid");
+
+      projects.forEach((project) => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        card.innerHTML = `
+          <div class="project-name">${project.name}</div> 
+          <div class="project-info">Supervisor: ${project.supervisor}</div>
+          <div class="project-info">Company: ${project.company}</div>
+          <div class="project-completion">${project.completion}% Complete</div>
+        `;
+        card.addEventListener("click", () => {
+          window.location.href = `projectdetails.html?id=${project.id}`;
+        });
+        projectGrid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
